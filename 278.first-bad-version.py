@@ -13,6 +13,7 @@
 class Solution:
     def firstBadVersion(self, n):
         """
+        returns the first bad version of a release
         Runtime:O(n log(n)))
         Space:O(1)
         :type n: int
