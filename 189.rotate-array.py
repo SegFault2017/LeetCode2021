@@ -36,7 +36,7 @@ class Solution:
     def cyclicReplacement(self, nums: List[int], k: int):
         """
         Do not return anything, modify nums in-place instead.
-        Strategy 1: Brute Force
+        Strategy 2: CyclicReplacement
         Runtime: O(n)
         Space: O(1)
 
@@ -61,8 +61,42 @@ class Solution:
             start += 1
         return
 
+    def reverse(self, nums: List[int], lo: int, hi: int) -> None:
+        """reverse nums starting from lo to hi
+
+        Args:
+            nums (List[int]): a list of integers
+            lo (int): starting point of nums
+            hi (int): ending point of nums
+        """
+
+        while lo < hi:
+            nums[lo], nums[hi] = nums[hi], nums[lo]
+            lo += 1
+            hi -= 1
+        return
+
+    def reverses(self, nums: List[int], k: int) -> None:
+        """Do not return anything, modify nums in-place instead.
+        Strategy 3: reverses
+        Runtime: O(n)
+        Space: O(1)
+
+        Args:
+            nums (List[int]): a list of integers
+        """
+
+        n = len(nums)
+        k %= n
+
+        self.reverse(nums, 0, n-1)
+        self.reverse(nums, 0, k-1)
+        self.reverse(nums, k, n-1)
+
+        return
+
     def rotate(self, nums: List[int], k: int) -> None:
-        self.cyclicReplacement(nums, k)
+        self.reverses(nums, k)
         return
 
 
