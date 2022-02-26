@@ -35,10 +35,8 @@ class Solution:
 
         while q:
             size = len(q)
-
             for i in range(size):
                 node = q.pop(0)
-
                 if i < size - 1:
                     node.next = q[0]
 
