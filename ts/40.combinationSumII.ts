@@ -3,6 +3,8 @@ const backTrack = (candidates:number[], target:number, combina:number[],
 	if(target ===  0){
 		result.push([...combina]);
 		return;
+	}else if(target < 0){
+		return;
 	}
 
 	const n:number = candidates.length;
