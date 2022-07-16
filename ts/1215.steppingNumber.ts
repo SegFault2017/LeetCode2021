@@ -25,7 +25,7 @@ const countSteppingNumbers =(low:number, high:number):number[] =>{
 	const n:number = high.toString().length;
 	let numbers:number[] = low === 0 ? [0] : [];
 	
-	for(let i = 1; i< n; i++){
+	for(let i = 1; i< 10; i++){
 		backTrack(low, high,i.toString(), numbers, n);
 	}
 	return numbers.sort((x:number, y:number) => x- y);
